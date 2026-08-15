@@ -5,16 +5,8 @@ import App from './App.jsx'
 import { useEffect } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import axios from 'axios';
+import Fetching from './components/data/index.jsx';
 
-useEffect(async function(){
-  try{
-    const reponse=await axios.get("https://fakestoreapi.com/products");
-    const data=await response.json()
-    console.log(data);
-  } catch(error){
-    console.log("erorr getting the info",error)
-  };
-})
 
 
 
@@ -23,6 +15,7 @@ useEffect(async function(){
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Fetching/>
     <App />
   </StrictMode>,
 )
