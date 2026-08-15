@@ -3,12 +3,25 @@
 
 function Menu(){
 
-    
+    const products = JSON.parse(localStorage.getItem("products"));
 
     return(
-        <div className="bg-white w-full h-full flex-1">
-            <div className="pt-20">
-                
+        <div className="bg-white w-full h-full flex-1 font-medium ">
+            <div className="pt-30 flex flex-wrap justify-center">
+                {products.map(function(item){
+                    return(
+                        <div className="bg-white border-b-gray-100 border  justify-end hover:border-4 flex flex-col pt-4 border-b-gray-300 flex-wrap w-[260px] h-[400px]">
+                            <div className="flex justify-center items-center">
+                                <img className="h-[240px] w-[200px]" src={item.image}/>
+                            </div>
+                            <div className="flex flex-col h-[130px] items-start p-2">
+                                <p className="line-clamp-2">{item.title}</p>
+                                <p className="font-bold text-xl">${item.price}</p>
+                                <p>⭐{item.rating.rate}</p>
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     );

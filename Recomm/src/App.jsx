@@ -11,8 +11,9 @@ function App() {
 
   return (
     <>
-      <Header/>
-      <Menu/>
+    <Fetching/>
+    <Header/>
+    <Menu/>
     </>
   )
 }
