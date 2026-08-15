@@ -15,7 +15,6 @@ import Fetching from './components/data/index.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Fetching/>
     <App />
   </StrictMode>,
 )
