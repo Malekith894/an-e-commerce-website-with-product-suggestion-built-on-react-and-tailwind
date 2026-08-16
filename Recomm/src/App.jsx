@@ -5,16 +5,28 @@ import heroImg from './assets/hero.png'
 import Fetching from './components/data'
 import Header from './components/header'
 import Menu from './components/menu/index.jsx'
+import Filter from './components/filter/index.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-    <Fetching/>
-    <Header/>
-    <Menu/>
-    </>
+    <div className='min-h-screen'>
+      <Fetching/>
+      <div>
+        <Header/>
+      </div>
+      <div className='grid grid-cols-[4fr_250px] p-6'>
+        <div>
+          <Menu/>
+        </div>
+        <div>
+          <Filter/>
+        </div>
+        
+      </div>
+
+    </div>
   )
 }
 
