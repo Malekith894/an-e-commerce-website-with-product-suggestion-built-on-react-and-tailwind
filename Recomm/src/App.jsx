@@ -18,16 +18,16 @@ function App() {
       </div>
       <div className='grid grid-cols-[4fr_250px] p-6'>
         <div>
-          <Menu/>
+          <Menu />
         </div>
         <div>
           <Filter/>
         </div>
-        
+      
       </div>
 
     </div>
   )
 }
 
-export default App
+export default App;
