@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import Fetching from './components/data'
-import Header from './components/header'
-import Menu from './components/menu/index.jsx'
-import Filter from './components/filter/index.jsx'
-import Details from './components/product_details/index.jsx'
+import Fetching from '../../components/data/index.jsx'
+import Header from '../../components/header/index.jsx'
+import Menu from '../../components/menu/index.jsx'
+import Filter from '../../components/filter/index.jsx'
 
-function App() {
+
+function Home() {
   const [prd, setprd] = useState([])
   const [minprice,setMinprice]=useState(0)
   const [maxprice,setMaxprice]=useState(1000)
@@ -22,7 +19,7 @@ function App() {
   const filtered_products=prd.filter(function(item){
           const pricematch= item.price<maxprice && item.price>minprice
           const categorycheck= category ===" " || item.category=== category; 
-          
+
           return pricematch && categorycheck;
         })
 
@@ -53,4 +50,4 @@ function App() {
   )
 }
 
-export default App;
+export default Home;
