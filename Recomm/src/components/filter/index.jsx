@@ -1,41 +1,20 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 
-function Filter(){
-
-    const [minprice,setminprice]=useState(0)
-    const [maxprice,setmaxprice]=useState(1000)
-    const [category,setcategory]=useState(" ")
+function Filter({minprice,maxprice,category,setMinprice,setMaxprice,setCategory}){
 
     function handlemaxprice(e){
-        setmaxprice(e.target.value)
+        const val=Number(e.target.value);
+        setMaxprice(Math.max(val,minprice))
     };
 
     function handleminprice(e){
-        setminprice(e.target.value);
+        const val=Number(e.target.value)
+        setMinprice(Math.min(val,maxprice));
     };
 
     function handlecategory(e){
-        setcategory(e.target.value)
-    };
-
-    function product_filtered(){
-        const products = JSON.parse(localStorage.getItem("products"));
-        const filtered_products=products.filter(function(item){
-            return (item.price<maxprice && item.price>maxprice)
-        })
-        return filtered_products;
-    };
-
-    function product_categorical(){
-        products=product_filtered();
-        if(category===" "){
-            return products
-        }else{
-            return (products.filter(function(item){
-                return item.category== category;
-            }))
-        }
+        setCategory(e.target.value)
     };
 
     return(
@@ -46,13 +25,13 @@ function Filter(){
                 <label>Price range</label>
                 <div className="flex flex-row justify-center items gap-1">
                     <label>$0</label>
-                    <input onChange={handleminprice} type="range" name="minimum_price" min="0" max="900" value={0}/> 
-                    <label>$900</label>
+                    <input onChange={handleminprice} type="range" name="minimum_price" min="0" max="900" value={minprice}/> 
+                    <label>${minprice}</label>
                 </div>
                 <div className="flex flex-row justify-center items gap-1">
                     <label>$8</label>
-                    <input onChange={handlemaxprice} type="range" name="maximum_price" min="8" max="1000" value={1000}/> 
-                    <label>$1000</label>
+                    <input onChange={handlemaxprice} type="range" name="maximum_price" min="8" max="1000" value={maxprice}/> 
+                    <label>${maxprice}</label>
                 </div>
                 
             </div>
