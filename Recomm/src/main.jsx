@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-
+import Layout from './components/layout/index.jsx'
 import { useEffect } from 'react'
 import Home from './Pages/home/index.jsx'
 import axios from 'axios';
@@ -12,12 +12,20 @@ import Details from './Pages/product/index.jsx'
 const router=createBrowserRouter([
   {
     path:'/',
+    element:<Layout/>,
+    children:[
+  {
+    path:'/',
     element: <Home/>
   },
   {
     path:'/product/:id',
     element:<Details/>
   }
+    ]
+
+  },
+  
 ]);
 
 

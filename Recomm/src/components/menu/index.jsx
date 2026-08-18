@@ -12,7 +12,7 @@ function Menu({list}){
                     return(
                         <div key={item.id} className="bg-white border-b-gray-100 border  justify-end hover:border-4 flex flex-col pt-4 border-b-gray-300 flex-wrap w-[260px] h-[400px]">
                             <Link to={`/product/${item.id}`}>
-                                <div className="flex flex-col  items-center">
+                            <div className="flex flex-col  items-center">
                                 <img className="h-[240px] w-[200px]" src={item.image}/>
                             </div>
                             <div className="flex flex-col h-[130px] justify-end items-start p-2">

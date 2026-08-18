@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import Fetching from '../../components/data/index.jsx'
-import Header from '../../components/header/index.jsx'
 import Menu from '../../components/menu/index.jsx'
 import Filter from '../../components/filter/index.jsx'
 
@@ -19,16 +18,13 @@ function Home() {
   const filtered_products=prd.filter(function(item){
           const pricematch= item.price<maxprice && item.price>minprice
           const categorycheck= category ===" " || item.category=== category; 
-
           return pricematch && categorycheck;
         })
 
   return (
     <div className='min-h-screen'>
       <Fetching/>
-      <div>
-        <Header/>
-      </div>
+      
       <div className='grid grid-cols-[4fr_250px] p-6'>
         <div>
           <Menu list={filtered_products}/>

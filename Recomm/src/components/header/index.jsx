@@ -1,10 +1,12 @@
-
+import { Link } from "react-router-dom";
 
 function Header(){
     return(
         <div className="bg-white flex flex-row justify-between items-center pl-34 pr-34 fixed font-black font-bold border-b-gray-300 border-solid border-b-2 h-[80px] w-full">
             <div className="flex flex-row justify-center items-center gap-8">
-                <button className="scale-150">🏡</button>
+                <Link to="/">
+                <button className="scale-150 ">🏡</button>
+                </Link>
                 <div className="caret-mauve-400">|</div>
                 <button className="scale-150">🎁</button>
             </div>
