@@ -8,12 +8,12 @@ import axios from 'axios';
 import Fetching from './components/data/index.jsx';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import Details from './Pages/product/index.jsx'
+import Shopping_seed from './Pages/shop/index.jsx'
+import { useState } from 'react'
+
+
 
 const router=createBrowserRouter([
-  {
-    path:'/',
-    element:<Layout/>,
-    children:[
   {
     path:'/',
     element: <Home/>
@@ -21,10 +21,11 @@ const router=createBrowserRouter([
   {
     path:'/product/:id',
     element:<Details/>
-  }
-    ]
-
   },
+  {
+    path:'shop',
+    element:<Shopping_seed />
+  }
   
 ]);
 
