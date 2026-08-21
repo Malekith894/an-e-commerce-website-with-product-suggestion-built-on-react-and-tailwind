@@ -19,11 +19,11 @@ function Filter({minprice,maxprice,category,setMinprice,setMaxprice,setCategory}
 
     return(
         <div className=" flex pt-34 flex-col items-end justify-center fixed ">
-            <label className="pr-34 pt-34 font-bold text-xl">Filters</label>
-            <div className="border border-b-gray-400 h-[400px] w-[220px] p-2 ">
-            <div className="flex flex-col items-center gap-3">
+            <label className="pr-38 pt-34 font-bold text-xl">Filters</label>
+            <div className="border border-b-gray-400 h-[400px] w-[240px] p-2 ">
+            <div className="flex flex-col items-start gap-3">
                 <label>Price range</label>
-                <div className="flex flex-row justify-center items gap-1">
+                <div className="flex flex-row justify-center  gap-1">
                     <label>$0</label>
                     <input onChange={handleminprice} type="range" name="minimum_price" min="0" max="900" value={minprice}/> 
                     <label>${minprice}</label>
@@ -35,7 +35,7 @@ function Filter({minprice,maxprice,category,setMinprice,setMaxprice,setCategory}
                 </div>
                 
             </div>
-            <div className="flex flex-col items-center gap-3 mt-6">
+            <div className="flex flex-col items-start gap-3 mt-6">
                 <label>Category</label>
                 <div className="flex flex-row gap-2">
                     <input type="radio" name="category" value=" " onChange={handlecategory} checked={category===" "}/>
